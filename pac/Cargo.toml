@@ -1,0 +1,16 @@
+[package]
+name = "m451"
+version = "0.0.1"
+authors = ["Sam Day <me@samcday.com>"]
+edition = "2018"
+
+[dependencies]
+cortex-m = "0.7"
+vcell = "0.1.2"
+
+[dependencies.cortex-m-rt]
+optional = true
+version = "0.6.13"
+
+[features]
+rt = ["cortex-m-rt/device"]

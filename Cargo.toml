@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+    "pac",
+    "hal",
+]

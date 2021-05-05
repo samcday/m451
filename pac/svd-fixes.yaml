@@ -1,0 +1,54 @@
+_svd: "M451_v1.svd"
+
+USBD:
+  _strip:
+    - "USBD_"
+
+#  _copy:
+#    CFG1:
+#      _from: CFG0
+
+  CFG0:
+#    EPNUM:
+#      _replace_enum:
+    EPNUM: [0, 7]
+    ISOCH:
+      _remove_enum: {}
+    STATE:
+      _replace_enum:
+        disabled: [0, Endpoint is Disabled]
+        out: [1, OUT Endpoint]
+        in: [2, IN Endpoint]
+
+  EPSTS:
+    EPSTS0:
+      _replace_enum:
+        in_ack: [0, In ACK]
+        in_nak: [1, In NAK]
+        out_data0_ack: [2, Out Packet Data0 ACK]
+        out_data1_ack: [6, Out Packet Data1 ACK]
+        setup_ack: [3, Setup ACK]
+        iso_end: [7, Isochronous transfer end]
+
+#  BUFSEG0:
+    # TODO: should delete the BUFSEG field since it's rubbish
+    # Instead add a register-level min value of 8 (since 3 LSBs are reserved).
+    # Don't think svdtools supports this yet.
+#
+#  _array:
+#    CFG[01234567]: {}
+#    CFGP*: {}
+#    MXPLD*: {}
+#    BUFSEG*: {}
+
+#      name: CONFIG%s
+#      _modify:
+#        EPNUM: [0, 15]
+#        STATE:
+
+  _cluster:
+    EP%s:
+      BUFSEG*: {}
+      MXPLD*: {}
+      CFG[01234567]: {}
+      CFGP*: {}

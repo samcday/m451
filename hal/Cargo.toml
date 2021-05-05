@@ -1,0 +1,12 @@
+[package]
+name = "m451-hal"
+version = "0.1.0"
+authors = ["Sam Day <me@samcday.com>"]
+edition = "2018"
+
+[dependencies]
+bitfield = "0.13.2"
+cortex-m = "0.7.2"
+heapless = "0.7.0"
+m451 = { path = "../pac" }
+usb-device = "0.2.8"
