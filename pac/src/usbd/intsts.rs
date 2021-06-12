@@ -370,49 +370,15 @@ impl<'a> NEVWKIF_W<'a> {
         self.w
     }
 }
-#[doc = "Endpoint 0's USB Event Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPEVT0_A {
-    #[doc = "0: No event occurred in endpoint 0"]
-    _0 = 0,
-    #[doc = "1: USB event occurred on Endpoint 0, check USBD_EPSTS\\[10:8\\]
-to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS\\[16\\]
-or USBD_INTSTS\\[1\\]"]
-    _1 = 1,
-}
-impl From<EPEVT0_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPEVT0_A) -> Self {
-        variant as u8 != 0
-    }
-}
 #[doc = "Field `EPEVT0` reader - Endpoint 0's USB Event Status"]
-pub struct EPEVT0_R(crate::FieldReader<bool, EPEVT0_A>);
+pub struct EPEVT0_R(crate::FieldReader<bool, bool>);
 impl EPEVT0_R {
     pub(crate) fn new(bits: bool) -> Self {
         EPEVT0_R(crate::FieldReader::new(bits))
     }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> EPEVT0_A {
-        match self.bits {
-            false => EPEVT0_A::_0,
-            true => EPEVT0_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == EPEVT0_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == EPEVT0_A::_1
-    }
 }
 impl core::ops::Deref for EPEVT0_R {
-    type Target = crate::FieldReader<bool, EPEVT0_A>;
+    type Target = crate::FieldReader<bool, bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -423,23 +389,6 @@ pub struct EPEVT0_W<'a> {
     w: &'a mut W,
 }
 impl<'a> EPEVT0_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EPEVT0_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "No event occurred in endpoint 0"]
-    #[inline(always)]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(EPEVT0_A::_0)
-    }
-    #[doc = "USB event occurred on Endpoint 0, check USBD_EPSTS\\[10:8\\]
-to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS\\[16\\]
-or USBD_INTSTS\\[1\\]"]
-    #[inline(always)]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(EPEVT0_A::_1)
-    }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -457,49 +406,15 @@ or USBD_INTSTS\\[1\\]"]
         self.w
     }
 }
-#[doc = "Endpoint 1's USB Event Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPEVT1_A {
-    #[doc = "0: No event occurred in endpoint 1"]
-    _0 = 0,
-    #[doc = "1: USB event occurred on Endpoint 1, check USBD_EPSTS\\[13:11\\]
-to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS\\[17\\]
-or USBD_INTSTS\\[1\\]"]
-    _1 = 1,
-}
-impl From<EPEVT1_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPEVT1_A) -> Self {
-        variant as u8 != 0
-    }
-}
 #[doc = "Field `EPEVT1` reader - Endpoint 1's USB Event Status"]
-pub struct EPEVT1_R(crate::FieldReader<bool, EPEVT1_A>);
+pub struct EPEVT1_R(crate::FieldReader<bool, bool>);
 impl EPEVT1_R {
     pub(crate) fn new(bits: bool) -> Self {
         EPEVT1_R(crate::FieldReader::new(bits))
     }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> EPEVT1_A {
-        match self.bits {
-            false => EPEVT1_A::_0,
-            true => EPEVT1_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == EPEVT1_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == EPEVT1_A::_1
-    }
 }
 impl core::ops::Deref for EPEVT1_R {
-    type Target = crate::FieldReader<bool, EPEVT1_A>;
+    type Target = crate::FieldReader<bool, bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -510,23 +425,6 @@ pub struct EPEVT1_W<'a> {
     w: &'a mut W,
 }
 impl<'a> EPEVT1_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EPEVT1_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "No event occurred in endpoint 1"]
-    #[inline(always)]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(EPEVT1_A::_0)
-    }
-    #[doc = "USB event occurred on Endpoint 1, check USBD_EPSTS\\[13:11\\]
-to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS\\[17\\]
-or USBD_INTSTS\\[1\\]"]
-    #[inline(always)]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(EPEVT1_A::_1)
-    }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -544,49 +442,15 @@ or USBD_INTSTS\\[1\\]"]
         self.w
     }
 }
-#[doc = "Endpoint 2's USB Event Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPEVT2_A {
-    #[doc = "0: No event occurred in endpoint 2"]
-    _0 = 0,
-    #[doc = "1: USB event occurred on Endpoint 2, check USBD_EPSTS\\[16:14\\]
-to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS\\[18\\]
-or USBD_INTSTS\\[1\\]"]
-    _1 = 1,
-}
-impl From<EPEVT2_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPEVT2_A) -> Self {
-        variant as u8 != 0
-    }
-}
 #[doc = "Field `EPEVT2` reader - Endpoint 2's USB Event Status"]
-pub struct EPEVT2_R(crate::FieldReader<bool, EPEVT2_A>);
+pub struct EPEVT2_R(crate::FieldReader<bool, bool>);
 impl EPEVT2_R {
     pub(crate) fn new(bits: bool) -> Self {
         EPEVT2_R(crate::FieldReader::new(bits))
     }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> EPEVT2_A {
-        match self.bits {
-            false => EPEVT2_A::_0,
-            true => EPEVT2_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == EPEVT2_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == EPEVT2_A::_1
-    }
 }
 impl core::ops::Deref for EPEVT2_R {
-    type Target = crate::FieldReader<bool, EPEVT2_A>;
+    type Target = crate::FieldReader<bool, bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -597,23 +461,6 @@ pub struct EPEVT2_W<'a> {
     w: &'a mut W,
 }
 impl<'a> EPEVT2_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EPEVT2_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "No event occurred in endpoint 2"]
-    #[inline(always)]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(EPEVT2_A::_0)
-    }
-    #[doc = "USB event occurred on Endpoint 2, check USBD_EPSTS\\[16:14\\]
-to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS\\[18\\]
-or USBD_INTSTS\\[1\\]"]
-    #[inline(always)]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(EPEVT2_A::_1)
-    }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -631,49 +478,15 @@ or USBD_INTSTS\\[1\\]"]
         self.w
     }
 }
-#[doc = "Endpoint 3's USB Event Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPEVT3_A {
-    #[doc = "0: No event occurred in endpoint 3"]
-    _0 = 0,
-    #[doc = "1: USB event occurred on Endpoint 3, check USBD_EPSTS\\[19:17\\]
-to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS\\[19\\]
-or USBD_INTSTS\\[1\\]"]
-    _1 = 1,
-}
-impl From<EPEVT3_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPEVT3_A) -> Self {
-        variant as u8 != 0
-    }
-}
 #[doc = "Field `EPEVT3` reader - Endpoint 3's USB Event Status"]
-pub struct EPEVT3_R(crate::FieldReader<bool, EPEVT3_A>);
+pub struct EPEVT3_R(crate::FieldReader<bool, bool>);
 impl EPEVT3_R {
     pub(crate) fn new(bits: bool) -> Self {
         EPEVT3_R(crate::FieldReader::new(bits))
     }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> EPEVT3_A {
-        match self.bits {
-            false => EPEVT3_A::_0,
-            true => EPEVT3_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == EPEVT3_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == EPEVT3_A::_1
-    }
 }
 impl core::ops::Deref for EPEVT3_R {
-    type Target = crate::FieldReader<bool, EPEVT3_A>;
+    type Target = crate::FieldReader<bool, bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -684,23 +497,6 @@ pub struct EPEVT3_W<'a> {
     w: &'a mut W,
 }
 impl<'a> EPEVT3_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EPEVT3_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "No event occurred in endpoint 3"]
-    #[inline(always)]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(EPEVT3_A::_0)
-    }
-    #[doc = "USB event occurred on Endpoint 3, check USBD_EPSTS\\[19:17\\]
-to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS\\[19\\]
-or USBD_INTSTS\\[1\\]"]
-    #[inline(always)]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(EPEVT3_A::_1)
-    }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -718,49 +514,15 @@ or USBD_INTSTS\\[1\\]"]
         self.w
     }
 }
-#[doc = "Endpoint 4's USB Event Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPEVT4_A {
-    #[doc = "0: No event occurred in endpoint 4"]
-    _0 = 0,
-    #[doc = "1: USB event occurred on Endpoint 4, check USBD_EPSTS\\[22:20\\]
-to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS\\[20\\]
-or USBD_INTSTS\\[1\\]"]
-    _1 = 1,
-}
-impl From<EPEVT4_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPEVT4_A) -> Self {
-        variant as u8 != 0
-    }
-}
 #[doc = "Field `EPEVT4` reader - Endpoint 4's USB Event Status"]
-pub struct EPEVT4_R(crate::FieldReader<bool, EPEVT4_A>);
+pub struct EPEVT4_R(crate::FieldReader<bool, bool>);
 impl EPEVT4_R {
     pub(crate) fn new(bits: bool) -> Self {
         EPEVT4_R(crate::FieldReader::new(bits))
     }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> EPEVT4_A {
-        match self.bits {
-            false => EPEVT4_A::_0,
-            true => EPEVT4_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == EPEVT4_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == EPEVT4_A::_1
-    }
 }
 impl core::ops::Deref for EPEVT4_R {
-    type Target = crate::FieldReader<bool, EPEVT4_A>;
+    type Target = crate::FieldReader<bool, bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -771,23 +533,6 @@ pub struct EPEVT4_W<'a> {
     w: &'a mut W,
 }
 impl<'a> EPEVT4_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EPEVT4_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "No event occurred in endpoint 4"]
-    #[inline(always)]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(EPEVT4_A::_0)
-    }
-    #[doc = "USB event occurred on Endpoint 4, check USBD_EPSTS\\[22:20\\]
-to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS\\[20\\]
-or USBD_INTSTS\\[1\\]"]
-    #[inline(always)]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(EPEVT4_A::_1)
-    }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -805,49 +550,15 @@ or USBD_INTSTS\\[1\\]"]
         self.w
     }
 }
-#[doc = "Endpoint 5's USB Event Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPEVT5_A {
-    #[doc = "0: No event occurred in endpoint 5"]
-    _0 = 0,
-    #[doc = "1: USB event occurred on Endpoint 5, check USBD_EPSTS\\[25:23\\]
-to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS\\[21\\]
-or USBD_INTSTS\\[1\\]"]
-    _1 = 1,
-}
-impl From<EPEVT5_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPEVT5_A) -> Self {
-        variant as u8 != 0
-    }
-}
 #[doc = "Field `EPEVT5` reader - Endpoint 5's USB Event Status"]
-pub struct EPEVT5_R(crate::FieldReader<bool, EPEVT5_A>);
+pub struct EPEVT5_R(crate::FieldReader<bool, bool>);
 impl EPEVT5_R {
     pub(crate) fn new(bits: bool) -> Self {
         EPEVT5_R(crate::FieldReader::new(bits))
     }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> EPEVT5_A {
-        match self.bits {
-            false => EPEVT5_A::_0,
-            true => EPEVT5_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == EPEVT5_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == EPEVT5_A::_1
-    }
 }
 impl core::ops::Deref for EPEVT5_R {
-    type Target = crate::FieldReader<bool, EPEVT5_A>;
+    type Target = crate::FieldReader<bool, bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -858,23 +569,6 @@ pub struct EPEVT5_W<'a> {
     w: &'a mut W,
 }
 impl<'a> EPEVT5_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EPEVT5_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "No event occurred in endpoint 5"]
-    #[inline(always)]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(EPEVT5_A::_0)
-    }
-    #[doc = "USB event occurred on Endpoint 5, check USBD_EPSTS\\[25:23\\]
-to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS\\[21\\]
-or USBD_INTSTS\\[1\\]"]
-    #[inline(always)]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(EPEVT5_A::_1)
-    }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -892,49 +586,15 @@ or USBD_INTSTS\\[1\\]"]
         self.w
     }
 }
-#[doc = "Endpoint 6's USB Event Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPEVT6_A {
-    #[doc = "0: No event occurred in endpoint 6"]
-    _0 = 0,
-    #[doc = "1: USB event occurred on Endpoint 6, check USBD_EPSTS\\[28:26\\]
-to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS\\[22\\]
-or USBD_INTSTS\\[1\\]"]
-    _1 = 1,
-}
-impl From<EPEVT6_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPEVT6_A) -> Self {
-        variant as u8 != 0
-    }
-}
 #[doc = "Field `EPEVT6` reader - Endpoint 6's USB Event Status"]
-pub struct EPEVT6_R(crate::FieldReader<bool, EPEVT6_A>);
+pub struct EPEVT6_R(crate::FieldReader<bool, bool>);
 impl EPEVT6_R {
     pub(crate) fn new(bits: bool) -> Self {
         EPEVT6_R(crate::FieldReader::new(bits))
     }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> EPEVT6_A {
-        match self.bits {
-            false => EPEVT6_A::_0,
-            true => EPEVT6_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == EPEVT6_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == EPEVT6_A::_1
-    }
 }
 impl core::ops::Deref for EPEVT6_R {
-    type Target = crate::FieldReader<bool, EPEVT6_A>;
+    type Target = crate::FieldReader<bool, bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -945,23 +605,6 @@ pub struct EPEVT6_W<'a> {
     w: &'a mut W,
 }
 impl<'a> EPEVT6_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EPEVT6_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "No event occurred in endpoint 6"]
-    #[inline(always)]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(EPEVT6_A::_0)
-    }
-    #[doc = "USB event occurred on Endpoint 6, check USBD_EPSTS\\[28:26\\]
-to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS\\[22\\]
-or USBD_INTSTS\\[1\\]"]
-    #[inline(always)]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(EPEVT6_A::_1)
-    }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {
@@ -979,49 +622,15 @@ or USBD_INTSTS\\[1\\]"]
         self.w
     }
 }
-#[doc = "Endpoint 7's USB Event Status\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq)]
-pub enum EPEVT7_A {
-    #[doc = "0: No event occurred in endpoint 7"]
-    _0 = 0,
-    #[doc = "1: USB event occurred on Endpoint 7, check USBD_EPSTS\\[31:29\\]
-to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS\\[23\\]
-or USBD_INTSTS\\[1\\]"]
-    _1 = 1,
-}
-impl From<EPEVT7_A> for bool {
-    #[inline(always)]
-    fn from(variant: EPEVT7_A) -> Self {
-        variant as u8 != 0
-    }
-}
 #[doc = "Field `EPEVT7` reader - Endpoint 7's USB Event Status"]
-pub struct EPEVT7_R(crate::FieldReader<bool, EPEVT7_A>);
+pub struct EPEVT7_R(crate::FieldReader<bool, bool>);
 impl EPEVT7_R {
     pub(crate) fn new(bits: bool) -> Self {
         EPEVT7_R(crate::FieldReader::new(bits))
     }
-    #[doc = r"Get enumerated values variant"]
-    #[inline(always)]
-    pub fn variant(&self) -> EPEVT7_A {
-        match self.bits {
-            false => EPEVT7_A::_0,
-            true => EPEVT7_A::_1,
-        }
-    }
-    #[doc = "Checks if the value of the field is `_0`"]
-    #[inline(always)]
-    pub fn is_0(&self) -> bool {
-        **self == EPEVT7_A::_0
-    }
-    #[doc = "Checks if the value of the field is `_1`"]
-    #[inline(always)]
-    pub fn is_1(&self) -> bool {
-        **self == EPEVT7_A::_1
-    }
 }
 impl core::ops::Deref for EPEVT7_R {
-    type Target = crate::FieldReader<bool, EPEVT7_A>;
+    type Target = crate::FieldReader<bool, bool>;
     #[inline(always)]
     fn deref(&self) -> &Self::Target {
         &self.0
@@ -1032,23 +641,6 @@ pub struct EPEVT7_W<'a> {
     w: &'a mut W,
 }
 impl<'a> EPEVT7_W<'a> {
-    #[doc = r"Writes `variant` to the field"]
-    #[inline(always)]
-    pub fn variant(self, variant: EPEVT7_A) -> &'a mut W {
-        self.bit(variant.into())
-    }
-    #[doc = "No event occurred in endpoint 7"]
-    #[inline(always)]
-    pub fn _0(self) -> &'a mut W {
-        self.variant(EPEVT7_A::_0)
-    }
-    #[doc = "USB event occurred on Endpoint 7, check USBD_EPSTS\\[31:29\\]
-to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS\\[23\\]
-or USBD_INTSTS\\[1\\]"]
-    #[inline(always)]
-    pub fn _1(self) -> &'a mut W {
-        self.variant(EPEVT7_A::_1)
-    }
     #[doc = r"Sets the field bit"]
     #[inline(always)]
     pub fn set_bit(self) -> &'a mut W {

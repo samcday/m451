@@ -43214,7 +43214,7 @@
       </addressBlock>
       <interrupt>
         <name>USBD_INT</name>
-        <value>69</value>
+        <value>53</value>
       </interrupt>
       <registers>
        <cluster><dim>8</dim><dimIncrement>0x10</dimIncrement><dimIndex>0,1,2,3,4,5,6,7</dimIndex><name>EP%s</name><description>Cluster EP%s, containing BUFSEG*, MXPLD*, CFG[01234567], CFGP*</description><addressOffset>0x500</addressOffset><register>
@@ -43250,7 +43250,7 @@
               <bitOffset>0</bitOffset>
               <bitWidth>9</bitWidth>
               <access>read-write</access>
-            </field>
+            <writeConstraint><range><minimum>0</minimum><maximum>512</maximum></range></writeConstraint></field>
           </fields>
        </register>
        <register>
@@ -43590,152 +43590,56 @@
               <bitOffset>16</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
-            <enumeratedValues>
-                 <enumeratedValue>
-                    <name>0</name>
-                    <description>No event occurred in endpoint 0</description>
-                    <value>#0</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>1</name>
-                    <description>USB event occurred on Endpoint 0, check USBD_EPSTS[10:8] to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS[16] or USBD_INTSTS[1]</description>
-                    <value>#1</value>
-                 </enumeratedValue>
-              </enumeratedValues>
-              </field>
-            <field>
+            </field>
+            <field derivedFrom="EPEVT0">
               <name>EPEVT1</name>
               <description>Endpoint 1's USB Event Status</description>
               <bitOffset>17</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
-            <enumeratedValues>
-                 <enumeratedValue>
-                    <name>0</name>
-                    <description>No event occurred in endpoint 1</description>
-                    <value>#0</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>1</name>
-                    <description>USB event occurred on Endpoint 1, check USBD_EPSTS[13:11] to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS[17] or USBD_INTSTS[1]</description>
-                    <value>#1</value>
-                 </enumeratedValue>
-              </enumeratedValues>
-              </field>
-            <field>
+            </field>
+            <field derivedFrom="EPEVT0">
               <name>EPEVT2</name>
               <description>Endpoint 2's USB Event Status</description>
               <bitOffset>18</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
-            <enumeratedValues>
-                 <enumeratedValue>
-                    <name>0</name>
-                    <description>No event occurred in endpoint 2</description>
-                    <value>#0</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>1</name>
-                    <description>USB event occurred on Endpoint 2, check USBD_EPSTS[16:14] to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS[18] or USBD_INTSTS[1]</description>
-                    <value>#1</value>
-                 </enumeratedValue>
-              </enumeratedValues>
-              </field>
-            <field>
+            </field>
+            <field derivedFrom="EPEVT0">
               <name>EPEVT3</name>
               <description>Endpoint 3's USB Event Status</description>
               <bitOffset>19</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
-            <enumeratedValues>
-                 <enumeratedValue>
-                    <name>0</name>
-                    <description>No event occurred in endpoint 3</description>
-                    <value>#0</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>1</name>
-                    <description>USB event occurred on Endpoint 3, check USBD_EPSTS[19:17] to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS[19] or USBD_INTSTS[1]</description>
-                    <value>#1</value>
-                 </enumeratedValue>
-              </enumeratedValues>
-              </field>
+            </field>
             <field>
               <name>EPEVT4</name>
               <description>Endpoint 4's USB Event Status</description>
               <bitOffset>20</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
-            <enumeratedValues>
-                 <enumeratedValue>
-                    <name>0</name>
-                    <description>No event occurred in endpoint 4</description>
-                    <value>#0</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>1</name>
-                    <description>USB event occurred on Endpoint 4, check USBD_EPSTS[22:20] to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS[20] or USBD_INTSTS[1]</description>
-                    <value>#1</value>
-                 </enumeratedValue>
-              </enumeratedValues>
-              </field>
+            </field>
             <field>
               <name>EPEVT5</name>
               <description>Endpoint 5's USB Event Status</description>
               <bitOffset>21</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
-            <enumeratedValues>
-                 <enumeratedValue>
-                    <name>0</name>
-                    <description>No event occurred in endpoint 5</description>
-                    <value>#0</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>1</name>
-                    <description>USB event occurred on Endpoint 5, check USBD_EPSTS[25:23] to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS[21] or USBD_INTSTS[1]</description>
-                    <value>#1</value>
-                 </enumeratedValue>
-              </enumeratedValues>
-              </field>
-            <field>
+            </field>
+            <field derivedFrom="EPEVT0">
               <name>EPEVT6</name>
               <description>Endpoint 6's USB Event Status</description>
               <bitOffset>22</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
-            <enumeratedValues>
-                 <enumeratedValue>
-                    <name>0</name>
-                    <description>No event occurred in endpoint 6</description>
-                    <value>#0</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>1</name>
-                    <description>USB event occurred on Endpoint 6, check USBD_EPSTS[28:26] to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS[22] or USBD_INTSTS[1]</description>
-                    <value>#1</value>
-                 </enumeratedValue>
-              </enumeratedValues>
-              </field>
-            <field>
+            </field>
+            <field derivedFrom="EPEVT0">
               <name>EPEVT7</name>
               <description>Endpoint 7's USB Event Status</description>
               <bitOffset>23</bitOffset>
               <bitWidth>1</bitWidth>
               <access>read-write</access>
-            <enumeratedValues>
-                 <enumeratedValue>
-                    <name>0</name>
-                    <description>No event occurred in endpoint 7</description>
-                    <value>#0</value>
-                 </enumeratedValue>
-                 <enumeratedValue>
-                    <name>1</name>
-                    <description>USB event occurred on Endpoint 7, check USBD_EPSTS[31:29] to know which kind of USB event was occurred, cleared by write 1 to USBD_INTSTS[23] or USBD_INTSTS[1]</description>
-                    <value>#1</value>
-                 </enumeratedValue>
-              </enumeratedValues>
-              </field>
+            </field>
             <field>
               <name>SETUP</name>
               <description>Setup Event Status</description>
